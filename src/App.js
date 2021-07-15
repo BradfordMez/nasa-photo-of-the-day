@@ -24,12 +24,12 @@ const StyledH1 = styled.h1`
 `
 const StyledTitle = styled.h2`
   background-color: ${props => props.theme.secondaryColor};
-  padding-top:.5em;
-  padding-bottom:.5em;
-  padding-right:2em;
-  padding-left:2em;
-  margin-right:24em;
-  margin-left:24em;
+  padding-top:.5rem;
+  padding-bottom:.5rem;
+  padding-right:2rem;
+  padding-left:2rem;
+  margin-right:24rem;
+  margin-left:24rem;
   border: .3em double ${props=>props.theme.primaryColor};
   color: ${props=>props.theme.tertiaryColor};
   border-radius: 1.5em;
@@ -38,23 +38,23 @@ const StyledTitle = styled.h2`
 const StyledDate=styled.h3`
   color: ${props=>props.theme.white};
   background-color: ${props=>props.theme.secondaryColor};
-  padding-right:.5em;
-  padding-left:.5em;
-  margin-right:53rem;
-  margin-left:53rem;
-  padding-top:.5em;
-  padding-bottom:.5em;
+  padding-right:.5rem;
+  padding-left:.5rem;
+  padding-top:.5rem;
+  padding-bottom:.5rem;
+  margin-right:45rem;
+  margin-left:45rem;
   border: .3em double ${props=>props.theme.primaryColor};
   border-radius: 2em;
 `
 const StyledExplanation=styled.p`
   background-color: ${props=>props.theme.secondaryColor};
-  padding-right:2em;
-  padding-left:2em;
-  padding-top:1em;
-  padding-bottom:1em;
-  margin-left:2em;
-  margin-right:2em;
+  padding-right:2rem;
+  padding-left:2rem;
+  padding-top:1rem;
+  padding-bottom:1rem;
+  margin-left:2rem;
+  margin-right:2rem;
   border: 1em double ${props=>props.theme.tertiaryColor};
   border-radius:1em;
 `

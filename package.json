@@ -11,6 +11,7 @@
     "react-dom": "^16.14.0",
     "react-scripts": "3.4.1",
     "redux": "^4.1.0",
+    "styled-components": "^5.3.0",
     "video-react": "^0.14.1"
   },
   "scripts": {

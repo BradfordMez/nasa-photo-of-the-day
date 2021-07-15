@@ -2,33 +2,88 @@ import React,{useState, useEffect} from "react";
 import "./App.css";
 import axios from 'axios'
 import {API_KEY, BASE_URL} from './index'
+import styled from "styled-components";
 
-import "../node_modules/video-react/dist/video-react.css";
-import { Player } from 'video-react';
+const StyledDiv = styled.div`
+  text-align: center;
+  background-color: ${props=>props.theme.headerColor};
+  color: ${props=>props.theme.primaryColor};
+  padding-top:1em;
+  margin:.3em;
+  border: .8em ridge ${props=>props.theme.tertiaryColor};
+`
+
+const StyledH1 = styled.h1`
+  background-color: ${props => props.theme.secondaryColor};
+  margin-left: 18em;
+  margin-right:18em;
+  padding-top:.5em;
+  padding-bottom:.5em;
+  border: .2em double ${props=>props.theme.tertiaryColor};
+  border-radius: 1em;
+`
+const StyledTitle = styled.h2`
+  background-color: ${props => props.theme.secondaryColor};
+  padding-top:.5em;
+  padding-bottom:.5em;
+  padding-right:2em;
+  padding-left:2em;
+  margin-right:24em;
+  margin-left:24em;
+  border: .3em double ${props=>props.theme.primaryColor};
+  color: ${props=>props.theme.tertiaryColor};
+  border-radius: 1.5em;
+`
+
+const StyledDate=styled.h3`
+  color: ${props=>props.theme.white};
+  background-color: ${props=>props.theme.secondaryColor};
+  padding-right:.5em;
+  padding-left:.5em;
+  margin-right:53rem;
+  margin-left:53rem;
+  padding-top:.5em;
+  padding-bottom:.5em;
+  border: .3em double ${props=>props.theme.primaryColor};
+  border-radius: 2em;
+`
+const StyledExplanation=styled.p`
+  background-color: ${props=>props.theme.secondaryColor};
+  padding-right:2em;
+  padding-left:2em;
+  padding-top:1em;
+  padding-bottom:1em;
+  margin-left:2em;
+  margin-right:2em;
+  border: 1em double ${props=>props.theme.tertiaryColor};
+  border-radius:1em;
+`
 
 
 function App() {
-const [data, setData] = useState([])
-useEffect(()=>{
-  axios.get(`${BASE_URL}/planetary/apod?api_key=${API_KEY}`)
-  .then(response=>{
-    console.log(response.data)
-    setData(response.data)
-  }).catch(err=>console.log(err))
-},[])
+  const [data, setData] = useState([])
+  useEffect(()=>{
+    axios.get(`${BASE_URL}/planetary/apod?api_key=${API_KEY}`)
+    .then((response)=>{
+      console.log(response.data)
+      setData(response.data)
+    })
+    .catch(err=>console.log(err))
+  },[])
 
   return (
-    <div className="App">
+    <StyledDiv>
       <p>
         Read through the instructions in the README.md file to build your NASA
         app! Have fun <span role="img" aria-label='go!'>🚀</span>!
       </p>
-      <h1>Astronomy Photo Of The Day</h1>
-      <iframe width='800' height='450' title={data.title} src = {data.url}/>
-      <h2>{data.title}</h2>
-      <h3>{data.date}</h3>
-      <p>{data.explanation}</p>
-    </div>
+      <StyledH1>Astronomy Photo Of The Day</StyledH1>
+      {/* <iframe width='800' height='450' title={data.title} src = {data.url}/> */}
+      <img src = {data.url} alt= 'Photo of the day'/>
+      <StyledTitle>{data.title}</StyledTitle>
+      <StyledDate>{data.date}</StyledDate>
+      <StyledExplanation>{data.explanation}</StyledExplanation>
+    </StyledDiv>
   );
   }
 

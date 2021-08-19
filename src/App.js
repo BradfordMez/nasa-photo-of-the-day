@@ -1,7 +1,7 @@
 import React,{useState, useEffect} from "react";
 import "./App.css";
 import axios from 'axios'
-import {API_KEY, BASE_URL} from './index'
+import {API_KEY, BASE_URL} from './index.js'
 import styled from "styled-components";
 
 const StyledDiv = styled.div`
@@ -76,13 +76,14 @@ function App() {
       <p>
         Read through the instructions in the README.md file to build your NASA
         app! Have fun <span role="img" aria-label='go!'>🚀</span>!
-      </p>
+      
       <StyledH1>Astronomy Photo Of The Day</StyledH1>
       {/* <iframe width='800' height='450' title={data.title} src = {data.url}/> */}
       <img src = {data.url} alt= 'Photo of the day'/>
       <StyledTitle>{data.title}</StyledTitle>
       <StyledDate>{data.date}</StyledDate>
       <StyledExplanation>{data.explanation}</StyledExplanation>
+      </p>
     </StyledDiv>
   );
   }

@@ -78,7 +78,6 @@ function App() {
         app! Have fun <span role="img" aria-label='go!'>🚀</span>!
       
       <StyledH1>Astronomy Photo Of The Day</StyledH1>
-      {/* <iframe width='800' height='450' title={data.title} src = {data.url}/> */}
       <img src = {data.url} alt= 'Photo of the day'/>
       <StyledTitle>{data.title}</StyledTitle>
       <StyledDate>{data.date}</StyledDate>

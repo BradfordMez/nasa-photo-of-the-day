@@ -78,7 +78,7 @@ function App() {
         app! Have fun <span role="img" aria-label='go!'>🚀</span>!
       
       <StyledH1>Astronomy Photo Of The Day</StyledH1>
-      <img src = {data.url} alt= 'Photo of the day'/>
+      <img src = {data.url} alt= ''/>
       <StyledTitle>{data.title}</StyledTitle>
       <StyledDate>{data.date}</StyledDate>
       <StyledExplanation>{data.explanation}</StyledExplanation>
